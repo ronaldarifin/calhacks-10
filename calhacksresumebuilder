@@ -14,8 +14,4 @@ items = [
 # Define a GET endpoint to retrieve all items
 @app.get("/items")
 def get_items():
-<<<<<<< HEAD
     return items
-=======
-    return items
->>>>>>> c66d0c55605053b9327547392d7029bb0e145e45
