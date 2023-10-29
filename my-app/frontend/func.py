@@ -1,6 +1,7 @@
 import openai
 import extract_description as extract
 
+import re
 from convex import ConvexClient
 from dotenv import load_dotenv
 import os
@@ -10,7 +11,6 @@ from embed import *
 load_dotenv("../.env")
 client = ConvexClient(os.getenv("CONVEX_URL"))
 api_key = os.getenv("OPENAI_KEY")
-# api_key = ''
 jsonFormat = """
 {... include name, location, email, phone, links, education, and skills
     "work experience": [
@@ -44,7 +44,8 @@ def similarity_search(job_description):
     summaries = []
     for entry in output:
         summaries.append(entry["summary"])
-    return summaries
+    # summaries = rewrite_resume(summaries, job_description)
+    return '\n===============================\n'.join(summaries)
 
 
  #returns a list of work experience json objects
@@ -63,6 +64,8 @@ def input_processing(username="test_user", cv_content=None):
     # uncomment this when we have the json format
     useGPT = 0
     if useGPT:
+        print("username: ", username)
+        print("cv_coontent: \n", cv_content)
         if cv_content == None or cv_content == "":
             return -1
         json_in_resume = cvToJson(cv_content, jsonFormat)
@@ -107,7 +110,21 @@ def executeChatGptCall(inputToGpt, token):
     return response.choices[0].text.strip()
 
 def cvToJson(userCV, jsonFormat):
-    inputToGpt = f"This is my CV: {userCV} \nNow, I want you return me a json object about my CV. I only want the json object representation like this \n====================\n{jsonFormat} \nFollow the format exactly, and output just the resulting JSON object."
+    inputToGpt = f"This is my CV:\n {userCV} \n====================\nInstrucition: Now, I want you return me a json object about my CV. I only want the json object representation like this \n{jsonFormat} \nFollow the format exactly, and output just the resulting JSON object."
     print("running GPT call...")
-    print(inputToGpt)
-    return executeChatGptCall(inputToGpt, 1500)
+    print("gpt input......\n", inputToGpt)
+    gpt_completion = executeChatGptCall(inputToGpt, 1500)
+    print("gpt output.....\n", gpt_completion)
+    gpt_completion = re.sub(r"```\n*.*$", "", gpt_completion)
+    gpt_completion = re.sub(r".*\n+```json", "", gpt_completion)
+    return gpt_completion
+
+# original is a list of resume summaries
+def rewrite_resume(original, job_desc):
+    new_summaries = []
+    for point in original:
+        inputToGpt = f"I'm looking at this job description: \n{job_desc}\n ================ The following is the contents of my resume: \n{point}\n================== Instruction: I need your help to rewrite it in the same format, using at most 4 points and make it a better fit for the given job description"
+        # inputToGpt = point(point)
+        new_summary = executeChatGptCall(inputToGpt, 100)
+        new_summaries.append(new_summary)
+    return new_summaries
