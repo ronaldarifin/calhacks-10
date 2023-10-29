@@ -6,7 +6,6 @@ from convex import ConvexClient
 from dotenv import load_dotenv
 import os
 import json
-
 from embed import *
 load_dotenv("../.env")
 client = ConvexClient(os.getenv("CONVEX_URL"))
@@ -60,21 +59,24 @@ def add_embed(json_obj, category):
 
 # Takes cv and job description
 # executes json parsing and embeddings. for each element of json, insert into convex
-def input_processing(username="test_user", cv_content=None):
+def input_processing(username="test_user", cv_content=None, option="File"):
     # uncomment this when we have the json format
-    useGPT = 0
-    if useGPT:
+    if username == "":
+        username = "test_user"
+    if option == "GPT":
         print("username: ", username)
-        print("cv_coontent: \n", cv_content)
+        print("cv_content: \n", cv_content)
         if cv_content == None or cv_content == "":
             return -1
         json_in_resume = cvToJson(cv_content, jsonFormat)
         print(json_in_resume)
-        json_in_resume = json.dumps(json_in_resume)
-    else:
-        f = open("sample_json2.json", "r")
+        json_in_resume = json.loads(json_in_resume)
+    elif option == "File":
+        f = open("sample_json3.json", "r")
         json_in_resume = json.loads(f.read())
         f.close()
+    else:
+        json_in_resume = json.loads(cv_content)
     
     # entry = {}
     # employee = json_in_resume["name"]
@@ -101,12 +103,14 @@ def get_resume_entries(username):
 
 
 def executeChatGptCall(inputToGpt, token):
+    print("getting gpt completion...")
     response = openai.Completion.create(
-        engine="text-davinci-002",
+        engine="gpt-3.5-turbo-instruct",
         prompt=inputToGpt,
         max_tokens=token,  # Adjust the number of tokens as needed
         api_key=api_key
     )
+    print("gpt full response", response)
     return response.choices[0].text.strip()
 
 def cvToJson(userCV, jsonFormat):

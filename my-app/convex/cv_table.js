@@ -11,15 +11,6 @@ export const get_cv = query({
   }
 });
 
-// export const insert_cv = mutation({
-//   args: {text: v.string() },
-//   handler: async ({ db } , args) => {
-//       const row = JSON.parse(args.text);
-//       return await db
-//           .insert("cv_table", { text: row });
-//   },
-// });
-
 export const insert_cv = mutation({
   args: { resume_json: v.any(), username: v.string() }, // Directly define the args
   handler: async ({ db }, args) => {
