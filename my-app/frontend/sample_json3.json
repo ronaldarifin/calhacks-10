@@ -1,0 +1,95 @@
+{
+    "name": "Abigael Lueta Amelia",
+    "contact": {
+      "phone": "253-347-7718",
+      "email": "abigaelluetaa@berkeley.edu",
+      "linkedin": "linkedin.com/in/abigael-amelia",
+      "github": "github.com/abigaelluetaa"
+    },
+    "education": [
+      {
+        "institution": "University of California, Berkeley",
+        "location": "Berkeley, CA",
+        "degree": "Bachelor of Arts in Computer Science",
+        "GPA": "3.8",
+        "graduationDate": "May 2024",
+        "relevantCoursework": ["Data Structures", "Computer Architecture", "Algorithms", "Database Systems"]
+      },
+      {
+        "institution": "Green River College",
+        "location": "Auburn, WA",
+        "degree": "Associate’s in Arts",
+        "GPA": "3.87",
+        "graduationDate": "Jun. 2022"
+      }
+    ],
+    "technicalSkills": {
+      "languages": ["Python", "Java", "JavaScript", "C", "C++", "RISC-V", "SQL"],
+      "developerTools": ["Git", "VS Code", "IntelliJ IDEA"],
+      "librariesTechnologies": ["pandas", "NumPy", "Matplotlib", "Seaborn", "Node.js", "React", "MongoDB", "sklearn"]
+    },
+    "projects": [
+      {
+        "name": "QuickChat",
+        "technologies": ["JavaScript", "React", "Express", "Socket.io", "MongoDB", "HTML/CSS"],
+        "description": [
+          "Engineered a real-time chat application with an intuitive interface and seamless messaging experience.",
+          "Incorporated React for a dynamic interface and integrated Socket.io with Express for event-based messaging.",
+          "Established a MongoDB schema for user data and chat histories, ensuring easy retrieval of past conversations.",
+          "Integrated Auth0 for user authentication, guaranteeing secure access to chat histories and user data."
+        ]
+      },
+      {
+        "name": "RookieDB: B+ Tree Database Index",
+        "technologies": ["Java", "ByteBuffer"],
+        "description": [
+          "Constructed a comprehensive B+ tree indexing mechanism to facilitate faster search, insert, and delete operations on the RookieDB, a prototype database system.",
+          "Devised leaf and inner node structures, ensuring that leaf nodes contained pairs of keys and Record IDs, and inner nodes stored keys with pointers to child nodes.",
+          "Leveraged RecordId to identify and retrieve table records based on page numbers and entry numbers.",
+          "Implemented a bulk load method to optimally and efficiently load large amounts of data into the database."
+        ]
+      },
+      {
+        "name": "TileExplorer: 2D Open World Simulator",
+        "technologies": ["Java", "StdDraw library", "TileEngine library"],
+        "description": [
+          "Built a 2D tile-based open-world simulation framework in Java, with the StdDraw library.",
+          "Developed a random world generation feature, resulting in unique and dynamic environments.",
+          "Enhanced user interaction by implementing customizable avatars and enabling movement through keyboard inputs.",
+          "Augmented user engagement with a robust saving/loading system. Persistently stored simulation attributes, including avatar characteristics and events, in a serialized CSV format."
+        ]
+      },
+      {
+        "name": "Ants vs. Bees",
+        "technologies": ["Python"],
+        "description": [
+          "Designed a tower defense game where players deploy ants to protect their colony against bee invaders.",
+          "Employed advanced object-oriented programming concepts to create class hierarchies representing game states, ants with diverse abilities, bees with different strategies, and interconnected game environments.",
+          "Architected a dynamic game environment comprising the colony tunnel, hive, and home base with unique interactions that influenced gameplay strategies.",
+          "Diversified gameplay with 12 ant classes, designed with unique abilities, using inheritance and polymorphism."
+        ]
+      }
+    ],
+    "leadershipAndWorkExperience": [
+      {
+        "title": "Chief Justice of Green River College",
+        "duration": "Jan. 2022 – Jun. 2022",
+        "location": "Green River College, Auburn, WA",
+        "responsibilities": [
+          "Directed the Judicial Board committee in managing the disciplinary process for ASGRC Senators and facilitating deliberations regarding the $16,000 club programming fund.",
+          "Assisted the Green River Technology Fee Committee with financial decisions regarding the campus tech needs.",
+          "Presented the developed yearly budget and proposed the student government constitutional changes within the student government to the Board of Trustees.",
+          "Advocated for Washington students and communicated student priorities to legislators on issues including mental health resources, textbook affordability, and food insecurity."
+        ]
+      },
+      {
+        "title": "Mathematics & Economics Tutor",
+        "duration": "Sep. 2020 – Jun. 2022",
+        "location": "Green River College, Auburn, WA",
+        "responsibilities": [
+          "Managed tutoring sessions for college-level Macroeconomics, Microeconomics, and Mathematics courses, including Calculus, Differential Equations, Linear Algebra, Statistics, and Discrete Mathematics, for up to 9 hours a week."
+        ]
+      }
+    ]
+  }
+  
