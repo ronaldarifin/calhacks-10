@@ -17,4 +17,8 @@ export default defineSchema({
         dimensions: 512,
         filterFields: ["username"],
     }),
+    cv_table: defineTable({
+        username: v.string(),
+        resume_json: v.any(),
+    })
 });

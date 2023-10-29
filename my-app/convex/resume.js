@@ -12,8 +12,8 @@ export const get_resume = query({
     }
 });
 
-export const createTask = mutation({
-    args: { user_id: v.string(), text: v.string() },
+export const insert_experience = mutation({
+    args: { text: v.string() },
     handler: async ({ db } , args) => {
         return await db
             .insert("resume", { text: args.text });
