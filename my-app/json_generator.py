@@ -1,7 +1,9 @@
 import openai
-
+from dotenv import load_dotenv
+import os
 # Replace 'YOUR_API_KEY' with your actual API key
-api_key = ''
+load_dotenv(".env")
+api_key = os.getenv("OPENAI_KEY")
 
 
 def executeChatGptCall(inputToGpt, token):
@@ -93,8 +95,47 @@ jsonFormat = """
 }
 
 """
-# Call the function with your sample data
-generatedResume = cvToJson(userCV, jsonFormat= jsonFormat)
 
-# Print the generated resume
-print(generatedResume)
+
+work_summaries = ['Tokenized is a Bitcoin wallet for issuing, managing and trading digital tokens. I built out the front end which was packaged as an electron app. It was a difficult frontend to build because we store the users keys locally and used them to sign transactions and contracts.', 'ACME Corp is a small start-up working on a new product. I was the only engineer on the team and was responsible for the full stack development of the product.']
+proj_summaries = ['Pacman is a classic video game where the goal is to collect as many points as possible while avoiding ghosts. The purpose of this project was to develop an AI agent that can play the game optimally and collect the most points.', 'Action Map is a web application that displays the US Map where the states and counties are clickable. When clicked, it will show the political candidates for that area. The purpose of this project was to allow users to visualize the political environment within all levels of government.']
+
+
+def summary_improvement(summaries):
+    jobDescription = """Key Qualifications
+    You may meet or have interest in any one of the following qualifications:
+    Strong object-oriented design skills, coupled with a deep knowledge of data structures and algorithms
+    Proficiency in one or more of the following developer skills: Java, C/C++, PHP, Python, Ruby, Unix, MySQL, Clojure, Scala, Java Script, CSS, HTML5
+    Experience in sophisticated methodologies such as Data Modeling, Validation, Processing, Hadoop, MapReduce, Mongo, Pig
+    Experience with web frameworks such as AngularJS, NodeJS, SproutCore
+    Proven experience in application development in Objective-C for macOS or iOS a plus
+    Client-Server protocol & API design Skills
+    Able to craft multi-functional requirements and translate them into practical engineering tasks
+    A fundamental knowledge of embedded processors, with in-depth knowledge of real time operating system concepts.
+    Excellent debugging and critical thinking skills
+    Excellent analytical and problem-solving skills
+    Ability to work in a fast paced, team-based environment"""
+    rule = "For example, if someone has a experience in frontend and backend, saying infrastructure is fine, but saying that you do systems engineering when you do testing is not allowed."
+    returnType = "For each of the correspoinding summary entry, I want you to return me a python list string. PYTHON LIST. Do not give me any bullshit. just the python list"
+    print(summaries)
+    prompt = "I'm a applicant with these experience summaries: {summaries}"
+    prompt += "I'm looking for a job with these description {jobDescription}"
+    prompt += "tailor my resume to the job description. Remember this example {rule}"
+    prompt += "Last, {returnType}"
+    # prompt += "For every summary, I want you to create a new summary that suits the job description given as below. {jobDescription}\n\n"
+    # prompt += "Make sure that the new summary that you output is now more relevant. Do not give or makeup something that is not in the summary.  \n"
+    # # prompt += "First, I will pass in each summary of my projects: {proj_summaries}\n"
+    # prompt += "Next, I will pass in each summary of my work experience: {work_summaries}\n"
+    # prompt += "Finally, I will pass in the job description: {jobDescription}\n"
+    # prompt += "For each of the correspoinding summary entry, I want you to return me a python list. Do not give me any bullshit. just the python list"
+    return executeChatGptCall(prompt, 1000)
+
+# Call the function with your sample data
+# generatedResume = cvToJson(userCV, jsonFormat= jsonFormat)
+
+# # Print the generated resume
+# print(generatedResume)
+# generatedSummaries = cvToJson()
+
+improvementResult = summary_improvement(work_summaries)
+print(improvementResult)

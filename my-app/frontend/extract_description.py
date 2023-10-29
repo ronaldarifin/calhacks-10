@@ -1,7 +1,7 @@
 import json
 
 def get_experience_in_category(data, category):
-    result = data.get("category", [])
+    result = data[category]
     print(result)
     return result
 

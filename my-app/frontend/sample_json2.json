@@ -61,47 +61,43 @@
             "Agile: Scrum Master"
         ]
     },
-    "work_experience": [
+    "work experience": [
         {
             "employer": "Feedloop AI",
             "position": "Software Engineer",
-            "dates": "May – Aug 2023",
-            "description": "• Created AI chatbot that recommends business strategies, saving 5+ hours weekly in client research.• Optimized backend by rewriting database queries and created new APIs using Express.js, Hasura, andPostgreSQL, reducing software load times by 50%.• Designed UI using Figma and Next.js to create application which maintains 10 active B2B clients, valued at $5M."
+            "summary": "• Created AI chatbot that recommends business strategies, saving 5+ hours weekly in client research.• Optimized backend by rewriting database queries and created new APIs using Express.js, Hasura, andPostgreSQL, reducing software load times by 50%.• Designed UI using Figma and Next.js to create application which maintains 10 active B2B clients, valued at $5M."
         },
         {
             "employer": "PasarApp",
             "position": "Software Engineer",
-            "dates": "Jan 2023 – Present",
-            "description": "• Prototyped and researched last-mile logistics mobile app that streamlines grocery purchase for 100 active users.• Developed entire mobile app using Vue and Hasura, increasing user productivity by 2 hours weekly.• Assessed UI/UX feedback from users to routinely develop application and enhance user experience."
+            "summary": "• Prototyped and researched last-mile logistics mobile app that streamlines grocery purchase for 100 active users.• Developed entire mobile app using Vue and Hasura, increasing user productivity by 2 hours weekly.• Assessed UI/UX feedback from users to routinely develop application and enhance user experience."
         },
         {
             "employer": "HKN",
             "position": "Computing Services Officer",
-            "dates": "Jan 2023 - Present",
-            "description": "• Migrated prior website technologies such as scheduling algorithms from Ruby on Rails to Django, facing over200,000 members globally.• Managed user administration using Google Workspaces for 100+ new members every semester.• Created internal scripts to maintain operations which align communications for over 300 active members."
+            "summary": "• Migrated prior website technologies such as scheduling algorithms from Ruby on Rails to Django, facing over200,000 members globally.• Managed user administration using Google Workspaces for 100+ new members every semester.• Created internal scripts to maintain operations which align communications for over 300 active members."
         },
         {
             "employer": "Berkeley BISA",
             "position": "Head of Technology &amp; Operations",
-            "dates": "April 2023 – Present",
-            "description": "• Gathered various sponsors through engaging website UX and CTA, raising up to $3,000 in club funds.• Maintained operations of BISA website, for 1000+ Indonesian students, alumnus, and working professionals.• Wrote creative monthly-newsletters and adapted information according to data-driven responses."
+            "summary": "• Gathered various sponsors through engaging website UX and CTA, raising up to $3,000 in club funds.• Maintained operations of BISA website, for 1000+ Indonesian students, alumnus, and working professionals.• Wrote creative monthly-newsletters and adapted information according to data-driven responses."
         }
     ],
     "projects": [
         {
             "name": "Gitlet",
             "technologies": ["Java", "Github"],
-            "description": "• Implemented data structures in Java to imitate features of Git Versional Control System as a personal project.• Optimized search algorithms using both BFS and DFS to manage repo histories.• Maintained program state of branches during different instances through Serialization library and OOP."
+            "summary": "• Implemented data structures in Java to imitate features of Git Versional Control System as a personal project.• Optimized search algorithms using both BFS and DFS to manage repo histories.• Maintained program state of branches during different instances through Serialization library and OOP."
         },
         {
             "name": "Garuda Hacks",
             "technologies": ["Student Hackathon"],
-            "description": "• Led online-hackathon operations, managing 3,000 participants with over $146,000 raised in funding for prizes.• Represented minority South East Asian communities in the bay area through participants and prizes• Co-founded sibling hackathon Komodo Hacks, which raised $5,000 in prizes with over 130 participating high-school students in Jakarta."
+            "summary": "• Led online-hackathon operations, managing 3,000 participants with over $146,000 raised in funding for prizes.• Represented minority South East Asian communities in the bay area through participants and prizes• Co-founded sibling hackathon Komodo Hacks, which raised $5,000 in prizes with over 130 participating high-school students in Jakarta."
         },
         {
             "name": "TransJakarta",
             "technologies": ["React Native", "Figma"],
-            "description": "• Designed mobile app to solve public transport pain points and save up to 3 hours in daily commute of users• Drew wireframes and prototypes to gain feedback from commuters• Developed application using React Native and presented to TransJakarta Digital Director for implementation."
+            "summary": "• Designed mobile app to solve public transport pain points and save up to 3 hours in daily commute of users• Drew wireframes and prototypes to gain feedback from commuters• Developed application using React Native and presented to TransJakarta Digital Director for implementation."
         }
     ],
     "personal_interests": [

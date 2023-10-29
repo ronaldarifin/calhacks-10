@@ -7,9 +7,11 @@ def process_text(cv_content, job_description):
     return latex_code
 
 with gr.Blocks() as demo:
-    inp = gr.Textbox(placeholder="What is your name?")
+    with gr.Row():
+        userInp = gr.Textbox(placeholder="What is your name?")
+        resumeInp = gr.Textbox(placeholder="Paste the entire contents of your Résume here")
     btn = gr.Button("Run")
-    btn.click(fn=input_processing, inputs=inp)
+    btn.click(fn=input_processing, inputs=[userInp, resumeInp])
 
     gr.Interface(
         fn=similarity_search, 
