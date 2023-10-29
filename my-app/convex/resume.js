@@ -36,7 +36,7 @@ export const get_similar_resumes = action({
     });
     const experiences = await ctx.runQuery(
       internal.resume.fetchResults,
-      { ids: results.map((result) => result._id), score: results.map((result) => result._score)}
+      { ids: results.map((result) => result._id), scores: results.map((result) => result._score)}
     );
     return experiences;
     },

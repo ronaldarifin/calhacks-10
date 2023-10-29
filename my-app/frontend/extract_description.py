@@ -1,9 +1,7 @@
 import json
 
-def get_work_experiences(file_path):
-    with open(file_path, 'r') as f:
-        data = json.load(f)
-    result = data.get("work experience", [])
+def get_experience_in_category(data, category):
+    result = data.get("category", [])
     print(result)
     return result
 
@@ -14,5 +12,5 @@ def get_summaries(json_lst):
     return result
 
 if __name__ == "__main__":
-    json_lst = get_work_experiences('sample_json.json')
+    json_lst = get_experience_in_category('sample_json.json', "work experience")
     
