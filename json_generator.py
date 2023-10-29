@@ -1,7 +1,8 @@
 import openai
+import os
 
 # Replace 'YOUR_API_KEY' with your actual API key
-api_key = ''
+api_key = os.getenv("OPENAI_KEY")
 
 
 def executeChatGptCall(inputToGpt, token):
