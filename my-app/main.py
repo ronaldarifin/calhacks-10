@@ -8,4 +8,4 @@ load_dotenv(".env.local")
 load_dotenv()
 
 client = ConvexClient(os.getenv("CONVEX_URL"))
-print(client.query("tasks:get"))
+print(client.query("queries:get_resume", {"user_id" : "1"}))
