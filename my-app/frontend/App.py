@@ -8,8 +8,8 @@ def process_text(cv_content, job_description):
 
 with gr.Blocks() as demo:
     with gr.Row():
-        userInp = gr.Textbox(placeholder="What is your name?")
-        resumeInp = gr.Textbox(placeholder="Paste the entire contents of your Résume here")
+        userInp = gr.Textbox(placeholder="What is your name?", label="Your Name")
+        resumeInp = gr.Textbox(placeholder="Paste the entire contents of your Résume here", label="Your Resume")
     btn = gr.Button("Run")
     btn.click(fn=input_processing, inputs=[userInp, resumeInp])
 
