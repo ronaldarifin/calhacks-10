@@ -15,7 +15,7 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as mutate from "../mutate";
-import type * as queries from "../queries";
+import type * as resume from "../resume";
 import type * as tasks from "../tasks";
 
 /**
@@ -28,7 +28,7 @@ import type * as tasks from "../tasks";
  */
 declare const fullApi: ApiFromModules<{
   mutate: typeof mutate;
-  queries: typeof queries;
+  resume: typeof resume;
   tasks: typeof tasks;
 }>;
 export declare const api: FilterApi<
